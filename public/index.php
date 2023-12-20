@@ -13,8 +13,25 @@ $param = $url[2] ?? null;
 // Routage
 switch ($controller) {
     case 'blog':
-        // $blogController = new blogController();
-        // $blogController->index();
+        $blogController = new blogController();
+        if (isset($action) && is_numeric($param)) {
+            switch ($action) {
+                case 'show':
+                    $blogController->show($param);
+                    break;
+                case 'delete':
+                    $blogController->delete($param);
+                    break;
+                case 'update':
+                    $blogController->update($param);
+                    break;
+                
+                default:
+                    // L'action n'existe pas
+                    echo 'L\'action n\'existe pas.';
+                    break;
+            }
+        }
         echo 'Blog';
         break;
     case 'about':
