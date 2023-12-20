@@ -1,4 +1,7 @@
 <?php
+// Autoload
+require_once '../vendor/autoload.php';
+
 // Récupération de l'url
 $url = htmlspecialchars($_GET['url'] ?? null);
 
