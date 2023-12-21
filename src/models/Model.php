@@ -1,11 +1,14 @@
 <?php
 namespace Blog\Models;
 
-abstract class Model
+abstract class Model extends Database
 {
+    protected $table;   
+
     public function getAll():array
     {
-        return [];
+        $query = $this->query("SELECT * FROM $this->table");
+        return $query->fetchAll();
     }
 
     public function getOne(int $id):array

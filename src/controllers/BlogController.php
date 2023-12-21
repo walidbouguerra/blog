@@ -14,13 +14,13 @@ class BlogController extends Controller
     // Affiche la page blog
     public function index():void
     {
-        $data = $this->model->getAll();
-        $this->render('pages/blog', $data);
+        $posts = $this->model->getAll();
+        $this->render('pages/blog', ['posts' => $posts]);
     }
 
     public function show(int $id):void
     {
-
+        $this->render('pages/post', []);
     }
 
     public function delete(int $id):void

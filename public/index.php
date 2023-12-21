@@ -3,7 +3,6 @@
 require_once '../vendor/autoload.php';
 
 // Classes
-use Blog\Controllers\HomeController;
 use Blog\Controllers\BlogController;
 use Blog\Controllers\AboutController;
 use Blog\Controllers\ContactController;
@@ -54,7 +53,7 @@ switch ($controller) {
         break;
     
     default:
-        $homeController = new HomeController();
-        $homeController->index();
+        $blogController = new BlogController();
+        $blogController->index();
         break;
 }
