@@ -11,6 +11,26 @@ class BlogController extends Controller
         $this->model = new BlogModel();
     }
 
+    public function router(string $action, int $param):void
+    {
+        switch ($action) {
+            case 'show':
+                $this->show($param);
+                break;
+            case 'delete':
+                $this->delete($param);
+                break;
+            case 'update':
+                $this->update($param);
+                break;
+            
+            default:
+                // L'action n'existe pas
+                echo 'L\'action n\'existe pas.';
+                break;
+        }
+    }
+
     // Affiche la page blog
     public function index():void
     {
