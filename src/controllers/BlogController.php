@@ -35,13 +35,13 @@ class BlogController extends Controller
     public function index():void
     {
         $posts = $this->model->getAll();
-        $this->render('pages/blog', ['posts' => $posts]);
+        $this->render('pages/blog', compact('posts'));
     }
 
     public function show(int $id):void
     {
         $post = $this->model->getOne($id);
-        $this->render('pages/post', ['post' => $post]);
+        $this->render('pages/post', compact('post'));
     }
 
     public function delete(int $id):void
