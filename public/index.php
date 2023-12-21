@@ -15,8 +15,7 @@ $url = explode('/', $url);
 
 // Initialisation des paramètres de l'url
 $controller = $url[0] ?? null;
-$action = $url[1] ?? null;
-$param = $url[2] ?? null;
+$param = $url[1] ?? null;
 
 // Routage
 switch ($controller) {
@@ -31,8 +30,8 @@ switch ($controller) {
     
     default:
         $blogController = new BlogController();
-        if ($controller === 'blog' && isset($action) && is_numeric($param)) {
-            $blogController->router($action, $param);
+        if ($controller === 'blog' && is_numeric($param)) {
+            $blogController->show($param);
         } else {
             $blogController->index();
         }

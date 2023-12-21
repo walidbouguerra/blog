@@ -18,7 +18,7 @@
             <?php foreach ($posts as $post) : ?>
             <!-- Post preview-->
             <div class="post-preview">
-                <a href="/blog/show/<?= $post['id'] ?>">
+                <a href="/blog/<?= $post['id'] ?>">
                     <h2 class="post-title"><?= $post['title'] ?></h2>
                     <h3 class="post-subtitle"><?= substr(strip_tags($post['content'], '<p>'),0 ,50) ?></h3>
                 </a>
