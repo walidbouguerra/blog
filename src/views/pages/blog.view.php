@@ -1,5 +1,5 @@
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('/img/home-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -18,12 +18,12 @@
             <?php foreach ($posts as $post) : ?>
             <!-- Post preview-->
             <div class="post-preview">
-                <a href="blog/show/<?= $post['id'] ?>">
+                <a href="/blog/show/<?= $post['id'] ?>">
                     <h2 class="post-title"><?= $post['title'] ?></h2>
-                    <h3 class="post-subtitle"><?= $post['content'] ?></h3>
+                    <h3 class="post-subtitle"><?= substr(strip_tags($post['content'], '<p>'),0 ,50) ?></h3>
                 </a>
                 <p class="post-meta">
-                    Posted by
+                    Publié par
                     <a href="#!"><?= $post['author'] ?></a>
                     le <?= $post['date'] ?>
                 </p>

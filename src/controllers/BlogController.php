@@ -20,7 +20,8 @@ class BlogController extends Controller
 
     public function show(int $id):void
     {
-        $this->render('pages/post', []);
+        $post = $this->model->getOne($id);
+        $this->render('pages/post', ['post' => $post]);
     }
 
     public function delete(int $id):void
