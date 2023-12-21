@@ -2,6 +2,12 @@
 // Autoload
 require_once '../vendor/autoload.php';
 
+// Classes
+use Blog\Controllers\HomeController;
+use Blog\Controllers\BlogController;
+use Blog\Controllers\AboutController;
+use Blog\Controllers\ContactController;
+
 // Récupération de l'url
 $url = htmlspecialchars($_GET['url'] ?? null);
 
@@ -16,7 +22,7 @@ $param = $url[2] ?? null;
 // Routage
 switch ($controller) {
     case 'blog':
-        $blogController = new blogController();
+        $blogController = new BlogController();
         if (isset($action) && is_numeric($param)) {
             switch ($action) {
                 case 'show':
@@ -34,23 +40,21 @@ switch ($controller) {
                     echo 'L\'action n\'existe pas.';
                     break;
             }
+        } else {
+            $blogController->index();
         }
-        echo 'Blog';
         break;
     case 'about':
-        // $aboutController = new AboutController();
-        // $aboutController->index();
-        echo 'About';
+        $aboutController = new AboutController();
+        $aboutController->index();
         break;
     case 'contact':
-        // $contactController = new contactController();
-        // $contactController->index();
-        echo 'Contact';
+        $contactController = new ContactController();
+        $contactController->index();
         break;
     
     default:
-        // $accueilController = new accueilController();
-        // $accueilController->index();
-        echo 'Accueil';
+        $homeController = new HomeController();
+        $homeController->index();
         break;
 }

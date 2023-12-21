@@ -1,5 +1,5 @@
 <?php
-namespace Controllers;
+namespace Blog\Controllers;
 
 class BlogController extends Controller
 {
@@ -7,5 +7,20 @@ class BlogController extends Controller
     public function index():void
     {
         $this->render('blog');
+    }
+
+    public function show(int $id):void
+    {
+
+    }
+
+    public function delete(int $id):void
+    {
+
+    }
+
+    public function update(int $id):void
+    {
+
     }
 }

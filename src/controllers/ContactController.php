@@ -1,5 +1,5 @@
 <?php
-namespace Controllers;
+namespace Blog\Controllers;
 
 class ContactController extends Controller
 {
