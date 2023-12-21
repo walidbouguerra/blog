@@ -6,7 +6,7 @@ class BlogController extends Controller
     // Affiche la page blog
     public function index():void
     {
-        $this->render('blog');
+        $this->render('pages/blog');
     }
 
     public function show(int $id):void

@@ -8,8 +8,8 @@ class Controller
     {
         extract($data);
         ob_start();
-        include_once '../views/' . $view . '.php';
+        include_once '../src/views/' . $view . '.view.php';
         $content = ob_get_clean();
-        include_once '../views/template.php';
+        include_once '../src/views/layout.view.php';
     }
 }
